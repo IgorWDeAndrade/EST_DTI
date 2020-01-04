@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "EST.DTI.Servico.Sevico/1.0.0": {
+        "dependencies": {
+          "EST.DTI.Domain": "1.0.0"
+        },
+        "runtime": {
+          "EST.DTI.Servico.Sevico.dll": {}
+        }
+      },
+      "EST.DTI.Domain/1.0.0": {
+        "runtime": {
+          "EST.DTI.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EST.DTI.Servico.Sevico/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "EST.DTI.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
