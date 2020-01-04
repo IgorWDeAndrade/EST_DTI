@@ -22,12 +22,19 @@ namespace EST.DTI.Infra.Data.Repositorio
 
         public void Adicionar(TEntity obj)
         {
+            obj.DateCadastro = DateTime.Now;
+            obj.Ativo = true;
             _entity.Add(obj);
             Commit();
         }
 
         public void AdicionarVarios(IEnumerable<TEntity> obj)
         {
+            obj.ToList().ForEach(x =>
+            {
+                x.DateCadastro = DateTime.Now;
+                x.Ativo = true;
+            });
             _entity.AddRange(obj);
             Commit();
         }

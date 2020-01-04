@@ -2,6 +2,7 @@
 using EST.DTI.Domain.Interfaces.Repositorio;
 using EST.DTI.Domain.Interfaces.Servicos;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -18,6 +19,11 @@ namespace EST.DTI.Servico.Sevico
         public void Adicionar(TEntity entity)
         {
             _repositorioBase.Adicionar(entity);
+        }
+
+        public void AdicionarVarios(ICollection<TEntity> list)
+        {
+            _repositorioBase.AdicionarVarios(list);
         }
 
         public void Atualizar(TEntity entity)

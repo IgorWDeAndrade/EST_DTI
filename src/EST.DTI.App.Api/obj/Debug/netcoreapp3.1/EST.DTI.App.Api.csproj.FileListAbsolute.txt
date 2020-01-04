@@ -241,10 +241,12 @@ D:\DEV\App\EST\src\EST.DTI.App.Api\bin\Debug\netcoreapp3.1\EST.DTI.Domain.pdb
 D:\DEV\App\EST\src\EST.DTI.App.Api\obj\Debug\netcoreapp3.1\EST.DTI.App.Api.csprojAssemblyReference.cache
 D:\DEV\App\EST\src\EST.DTI.App.Api\obj\Debug\netcoreapp3.1\staticwebassets\EST.DTI.App.Api.StaticWebAssets.Manifest.cache
 D:\DEV\App\EST\src\EST.DTI.App.Api\obj\Debug\netcoreapp3.1\staticwebassets\EST.DTI.App.Api.StaticWebAssets.xml
-D:\DEV\App\EST\src\EST.DTI.App.Api\obj\Debug\netcoreapp3.1\EST.DTI.App.Api.MvcApplicationPartsAssemblyInfo.cache
 D:\DEV\App\EST\src\EST.DTI.App.Api\obj\Debug\netcoreapp3.1\EST.DTI.App.Api.AssemblyInfoInputs.cache
 D:\DEV\App\EST\src\EST.DTI.App.Api\obj\Debug\netcoreapp3.1\EST.DTI.App.Api.AssemblyInfo.cs
 D:\DEV\App\EST\src\EST.DTI.App.Api\obj\Debug\netcoreapp3.1\EST.DTI.App.Api.RazorTargetAssemblyInfo.cache
 D:\DEV\App\EST\src\EST.DTI.App.Api\obj\Debug\netcoreapp3.1\EST.DTI.App.Api.csproj.CopyComplete
 D:\DEV\App\EST\src\EST.DTI.App.Api\obj\Debug\netcoreapp3.1\EST.DTI.App.Api.dll
 D:\DEV\App\EST\src\EST.DTI.App.Api\obj\Debug\netcoreapp3.1\EST.DTI.App.Api.pdb
+D:\DEV\App\EST\src\EST.DTI.App.Api\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+D:\DEV\App\EST\src\EST.DTI.App.Api\bin\Debug\netcoreapp3.1\AutoMapper.dll
+D:\DEV\App\EST\src\EST.DTI.App.Api\obj\Debug\netcoreapp3.1\EST.DTI.App.Api.MvcApplicationPartsAssemblyInfo.cache

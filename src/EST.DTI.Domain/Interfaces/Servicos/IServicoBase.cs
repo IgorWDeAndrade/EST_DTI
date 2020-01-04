@@ -1,5 +1,6 @@
 ﻿using EST.DTI.Domain.Entity;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 
@@ -8,6 +9,7 @@ namespace EST.DTI.Domain.Interfaces.Servicos
     public interface IServicoBase<TEntity> where TEntity : EntidadeBase
     {
         void Adicionar(TEntity entity);
+        void AdicionarVarios(ICollection<TEntity> list);
         void Atualizar(TEntity entity);
         void Deletar(int id);
         void Deletar(TEntity predicate);

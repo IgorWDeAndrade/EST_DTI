@@ -2,6 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
+using EST.DTI.App.Api.ViewModels;
+using EST.DTI.Domain.Entity;
 using EST.DTI.Domain.Interfaces.Repositorio;
 using EST.DTI.Domain.Interfaces.Servicos;
 using EST.DTI.Infra.Data.Data;
@@ -21,12 +24,11 @@ namespace EST.DTI.App.Api
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; }
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
-
-        public IConfiguration Configuration { get; }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -37,6 +39,7 @@ namespace EST.DTI.App.Api
 
             services.AddControllers();
 
+            RegistrarDIAutoMapper(services);
             RegistraDI(services);
         }
 
@@ -64,11 +67,24 @@ namespace EST.DTI.App.Api
         {
             //Repositorios
             services.AddSingleton(typeof(IRepositorioBase<>), typeof(RepositorioBase<>));
-            services.AddSingleton<IRepositorioProdutos, RepositorioProdutos>();
+            services.AddScoped<IRepositorioProdutos, RepositorioProdutos>();
 
             //Servicos
             services.AddSingleton(typeof(IServicoBase<>), typeof(ServicoBase<>));
-            services.AddSingleton<IServicoProdutos, ServicoProdutos>();
+            services.AddScoped<IServicoProdutos, ServicoProdutos>();
+
+        }
+
+        private void RegistrarDIAutoMapper(IServiceCollection services)
+        {
+            var config = new AutoMapper.MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<Produto, ProdutoViewModel>().ReverseMap();
+            });
+
+            IMapper mapper = config.CreateMapper();
+
+            services.AddSingleton(mapper);
         }
     }
 }

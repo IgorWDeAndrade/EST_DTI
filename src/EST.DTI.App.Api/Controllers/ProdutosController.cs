@@ -1,26 +1,42 @@
-﻿using EST.DTI.Domain.Interfaces.Servicos;
+﻿using AutoMapper;
+using EST.DTI.App.Api.ViewModels;
+using EST.DTI.Domain.Entity;
+using EST.DTI.Domain.Interfaces.Servicos;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
 namespace EST.DTI.App.Api.Controllers
 {
     [Route("api/[controller]")]
+    [Produces("application/json")]
     [ApiController]
     public class ProdutosController : ControllerBase
     {
         private readonly IServicoProdutos _servicoProdutos;
-        public ProdutosController(IServicoProdutos servicoProdutos)
+        private readonly IMapper _mapper;
+        public ProdutosController(
+            IServicoProdutos servicoProdutos,
+            IMapper mapper)
         {
             _servicoProdutos = servicoProdutos;
+            _mapper = mapper;
         }
 
         // GET: api/Produtos
         [HttpGet]
         [Route("ObterTodos")]
-        public IEnumerable<string> Get()
+        public IEnumerable<ProdutoViewModel> ObterTodos()
         {
-            var objs = _servicoProdutos.ObterVarios(x => x.Ativo);
-            return new string[] { "value1", "value2" };
+            var list = _mapper.Map<List<ProdutoViewModel>>(_servicoProdutos.ObterVarios(x => x.Ativo));
+            return list;
+        }
+
+        [HttpGet]
+        [Route("ObterPorId/{id}")]
+        public ProdutoViewModel ObterPorId(int id)
+        {
+            var obj = _mapper.Map<ProdutoViewModel>(_servicoProdutos.Obter(id));
+            return obj;
         }
 
         // GET: api/Produtos/5
