@@ -1,0 +1,7 @@
+D:\DEV\App\EST\src\EST.DTI.Domain\bin\Debug\netcoreapp2.2\EST.DTI.Domain.deps.json
+D:\DEV\App\EST\src\EST.DTI.Domain\bin\Debug\netcoreapp2.2\EST.DTI.Domain.dll
+D:\DEV\App\EST\src\EST.DTI.Domain\bin\Debug\netcoreapp2.2\EST.DTI.Domain.pdb
+D:\DEV\App\EST\src\EST.DTI.Domain\obj\Debug\netcoreapp2.2\EST.DTI.Domain.AssemblyInfoInputs.cache
+D:\DEV\App\EST\src\EST.DTI.Domain\obj\Debug\netcoreapp2.2\EST.DTI.Domain.AssemblyInfo.cs
+D:\DEV\App\EST\src\EST.DTI.Domain\obj\Debug\netcoreapp2.2\EST.DTI.Domain.dll
+D:\DEV\App\EST\src\EST.DTI.Domain\obj\Debug\netcoreapp2.2\EST.DTI.Domain.pdb

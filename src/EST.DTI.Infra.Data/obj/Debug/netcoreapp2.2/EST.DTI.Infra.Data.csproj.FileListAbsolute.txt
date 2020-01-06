@@ -1,0 +1,13 @@
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\bin\Debug\netcoreapp2.2\EST.DTI.Infra.Data.deps.json
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\bin\Debug\netcoreapp2.2\EST.DTI.Infra.Data.runtimeconfig.json
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\bin\Debug\netcoreapp2.2\EST.DTI.Infra.Data.runtimeconfig.dev.json
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\bin\Debug\netcoreapp2.2\EST.DTI.Infra.Data.dll
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\bin\Debug\netcoreapp2.2\EST.DTI.Infra.Data.pdb
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\bin\Debug\netcoreapp2.2\EST.DTI.Domain.dll
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\bin\Debug\netcoreapp2.2\EST.DTI.Domain.pdb
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\obj\Debug\netcoreapp2.2\EST.DTI.Infra.Data.csprojAssemblyReference.cache
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\obj\Debug\netcoreapp2.2\EST.DTI.Infra.Data.AssemblyInfoInputs.cache
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\obj\Debug\netcoreapp2.2\EST.DTI.Infra.Data.AssemblyInfo.cs
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\obj\Debug\netcoreapp2.2\EST.DTI.Infra.Data.csproj.CopyComplete
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\obj\Debug\netcoreapp2.2\EST.DTI.Infra.Data.dll
+D:\DEV\App\EST\src\EST.DTI.Infra.Data\obj\Debug\netcoreapp2.2\EST.DTI.Infra.Data.pdb

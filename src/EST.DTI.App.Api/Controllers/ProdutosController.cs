@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using EST.DTI.App.Api.ViewModels;
+using EST.DTI.App.Api.ViewModel;
 using EST.DTI.Domain.Entity;
 using EST.DTI.Domain.Interfaces.Servicos;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EST.DTI.App.Api.Controllers
 {
@@ -22,46 +23,72 @@ namespace EST.DTI.App.Api.Controllers
             _mapper = mapper;
         }
 
-        // GET: api/Produtos
         [HttpGet]
         [Route("ObterTodos")]
-        public IEnumerable<ProdutoViewModel> ObterTodos()
+        public ActionResult<IEnumerable<ProdutoViewModel>> ObterTodos()
         {
-            var list = _mapper.Map<List<ProdutoViewModel>>(_servicoProdutos.ObterVarios(x => x.Ativo));
+            var list = _mapper.Map<List<ProdutoViewModel>>(_servicoProdutos.ObterVarios(x => x.Ativo).ToList().OrderBy(x => x.Descricao));
             return list;
         }
 
         [HttpGet]
         [Route("ObterPorId/{id}")]
-        public ProdutoViewModel ObterPorId(int id)
+        public ActionResult<ProdutoViewModel> ObterPorId([FromRoute]int id)
         {
             var obj = _mapper.Map<ProdutoViewModel>(_servicoProdutos.Obter(id));
             return obj;
         }
 
-        // GET: api/Produtos/5
-        [HttpGet("{id}", Name = "Get")]
-        public string Get(int id)
+        [HttpDelete]
+        [Route("ExcluirPorId/{id}")]
+        public ActionResult<ProdutoViewModel> ExcluirPorId([FromRoute]int id)
         {
-            return "value";
+            var obj = _mapper.Map<ProdutoViewModel>(_servicoProdutos.Obter(id));
+            try
+            {
+                _servicoProdutos.Deletar(id);
+                obj = _mapper.Map<ProdutoViewModel>(_servicoProdutos.Obter(id));
+                return obj;
+            }
+            catch
+            {
+                return obj;
+            }
         }
 
-        // POST: api/Produtos
+        [HttpPut]
+        [Route("Atualizar/{id}")]
+        public ActionResult<ProdutoViewModel> Atualizar([FromRoute]int id, [FromBody] ProdutoViewModel produto)
+        {
+            try
+            {
+                var obj = _servicoProdutos.Obter(id);
+                obj.Descricao = produto.Descricao;
+                obj.Quantidade = produto.Quantidade;
+                obj.ValorUnidade = produto.ValorUnidade;
+                _servicoProdutos.Atualizar(obj);
+                return produto;
+            }
+            catch
+            {
+                return produto;
+            }
+        }
+
         [HttpPost]
-        public void Post([FromBody] string value)
+        [Route("Criar/")]
+        public ActionResult<ProdutoViewModel> Criar([FromBody] ProdutoViewModel vm)
         {
-        }
-
-        // PUT: api/Produtos/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
-        {
-        }
-
-        // DELETE: api/ApiWithActions/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+            var obj = _mapper.Map<Produto>(vm);
+            try
+            {
+                _servicoProdutos.Adicionar(obj);
+                return vm;
+            }
+            catch
+            {
+                return vm;
+            }
         }
     }
 }

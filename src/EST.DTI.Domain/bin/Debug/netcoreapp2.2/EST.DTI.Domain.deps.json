@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "EST.DTI.Domain/1.0.0": {
+        "runtime": {
+          "EST.DTI.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "EST.DTI.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
