@@ -20,7 +20,7 @@ namespace EST.DTI.Infra.Data.Repositorio
             _entity = _contexto.Set<TEntity>();
         }
 
-        public void Adicionar(TEntity obj)
+        public virtual void Adicionar(TEntity obj)
         {
             obj.DateCadastro = DateTime.Now;
             obj.Ativo = true;
@@ -39,7 +39,7 @@ namespace EST.DTI.Infra.Data.Repositorio
             Commit();
         }
 
-        public void Atualizar(TEntity obj)
+        public virtual void Atualizar(TEntity obj)
         {
             _entity.Update(obj);
             Commit();
@@ -50,7 +50,7 @@ namespace EST.DTI.Infra.Data.Repositorio
             _contexto.SaveChanges();
         }
 
-        public void Deletar(TEntity obj)
+        public virtual void Deletar(TEntity obj)
         {
             obj.Ativo = false;
             _entity.Update(obj);

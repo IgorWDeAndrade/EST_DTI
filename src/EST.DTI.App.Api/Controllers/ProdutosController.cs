@@ -35,6 +35,10 @@ namespace EST.DTI.App.Api.Controllers
         [Route("ObterPorId/{id}")]
         public ActionResult<ProdutoViewModel> ObterPorId([FromRoute]int id)
         {
+            if(id == 0)
+            {
+                return null;
+            }
             var obj = _mapper.Map<ProdutoViewModel>(_servicoProdutos.Obter(id));
             return obj;
         }
@@ -43,6 +47,9 @@ namespace EST.DTI.App.Api.Controllers
         [Route("ExcluirPorId/{id}")]
         public ActionResult<ProdutoViewModel> ExcluirPorId([FromRoute]int id)
         {
+            if (id == 0)
+                return null;
+
             var obj = _mapper.Map<ProdutoViewModel>(_servicoProdutos.Obter(id));
             try
             {
@@ -62,12 +69,17 @@ namespace EST.DTI.App.Api.Controllers
         {
             try
             {
-                var obj = _servicoProdutos.Obter(id);
-                obj.Descricao = produto.Descricao;
-                obj.Quantidade = produto.Quantidade;
-                obj.ValorUnidade = produto.ValorUnidade;
-                _servicoProdutos.Atualizar(obj);
-                return produto;
+                if (ModelState.IsValid)
+                {
+
+                    var obj = _servicoProdutos.Obter(id);
+                    obj.Descricao = produto.Descricao;
+                    obj.Quantidade = produto.Quantidade;
+                    obj.ValorUnidade = produto.ValorUnidade;
+                    _servicoProdutos.Atualizar(obj);
+                    return produto;
+                }
+                return null;
             }
             catch
             {
@@ -79,11 +91,15 @@ namespace EST.DTI.App.Api.Controllers
         [Route("Criar/")]
         public ActionResult<ProdutoViewModel> Criar([FromBody] ProdutoViewModel vm)
         {
-            var obj = _mapper.Map<Produto>(vm);
             try
             {
-                _servicoProdutos.Adicionar(obj);
-                return vm;
+                if (ModelState.IsValid)
+                {
+                    var obj = _mapper.Map<Produto>(vm);
+                    _servicoProdutos.Adicionar(obj);
+                    return vm;
+                }
+                return null;
             }
             catch
             {

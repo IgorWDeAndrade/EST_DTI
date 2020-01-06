@@ -15,5 +15,11 @@ namespace EST.DTI.Infra.Data.Repositorio
         {
             _contexto = contexto;
         }
+
+        public override void Adicionar(Produto obj)
+        {
+            obj.PrepararProdutoNovo(obj);
+            base.Adicionar(obj);
+        }
     }
 }
